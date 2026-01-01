@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --accent-1: 0 0 0;
+  --accent-2: 244 95 0;
+  --accent-3: 242 9 9;
+  --accent-4: 4 4 4;
+  --accent-5: 30 61 89;
+  --accent-6: 72 116 158;
+  --accent-7: 222 238 254;
+  --accent-8: 232 235 239;
+  --accent-9: 163 163 163;
+  --accent-10: 182 201 206;
+  --accent-11: 198 235 247;
+  --accent-12: 229 229 229;
+  --accent-13: 241 241 241;
+  --accent-14: 250 152 25;
+  --accent-15: 255 255 255;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --text-1: 0 0 0;
+  --text-2: 87 87 87;
+  --divider-1: 0 0 0;
+  --stroke-1: 0 0 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-rethink-sans), system-ui, sans-serif;
+}
+
+.nav-link-label {
+  font-family: "Rethink Sans";
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+}
+
+.nav-link-number {
+  font-family: "Rethink Sans";
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 120%;
+  letter-spacing: -0.02em;
+  color: #575757;
+  transform: translateX(-3px);
+}
+
+@media (max-width: 1279px) {
+  .nav-link-label {
+    font-size: 13px;
+  }
+  .nav-link-number {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 799px) {
+  .nav-link-label {
+    font-size: 13px;
+  }
+  .nav-link-number {
+    font-size: 10px;
+  }
 }
