@@ -1,4 +1,4 @@
-import type { Block } from "../../content/guidelines.data";
+import type { Block } from "../../content/guidelines.types";
 
 import Heading02 from "..//heading-02";
 import Paragraph01 from "../paragraph-01";
