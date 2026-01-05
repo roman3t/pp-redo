@@ -1,96 +1,4 @@
-export type Block =
-  | { type: "lead"; text: string[] }
-  | { type: "image"; src: string; alt: string; heightClass?: string }
-  | { type: "subheading"; text: string }
-  | {
-      type: "contents";
-      items: { number: string; title: string; href: string }[];
-    }
-  | {
-      type: "toneVoice";
-      title: string;
-      items: { label: string; value: string }[];
-    }
-  | {
-      type: "sampleCopy";
-      title: string;
-      items: { title: string; body: string }[];
-    }
-  | { type: "palette"; title: string; colors: { name: string; hex: string }[] }
-  | {
-      type: "gallery";
-      items: {
-        title: string;
-        image: { src: string; alt: string; height?: number };
-      }[];
-    }
-  | {
-      type: "donts";
-      title: string;
-      items: {
-        rule: string;
-        image: { src: string; alt: string; height?: number };
-      }[];
-    }
-  | {
-      type: "partnerships";
-      title: string;
-      image: { src: string; alt: string; height?: number };
-    }
-  | { type: "lead"; text: string[] }
-  | {
-      type: "paletteSection";
-      title: string;
-      swatches: { name: string; hex: string; stroke?: boolean }[];
-    }
-  | {
-      type: "gradientSection";
-      title: string;
-      gradients: { name: string; css: string }[];
-    }
-  | {
-      type: "typePairing";
-      preview: { src: string; alt: string; height?: number };
-      paragraphs: Array<{
-        text: string;
-        highlights?: Array<{ match: string; className: string }>;
-      }>;
-    }
-  | {
-      type: "typeSpecimen";
-      items: Array<{
-        label: string; // "Primary Typeface"
-        sample: string; // "Rethink Sans Reg"
-        font: "sans" | "serif"; // para aplicar clase
-      }>;
-    }
-  | {
-      type: "sizing";
-      title: string; // "Sizing"
-      intro?: string[];
-      specimens: Array<{
-        text: string;
-        meta: string; // "Type Sizes 0–24pt/px 130% Leading 0% Tracking"
-        sizeClass: string; // tailwind para el tamaño del ejemplo
-        leadingClass: string; // tailwind leading
-        trackingClass: string; // tailwind tracking
-      }>;
-    }
-  | {
-      type: "artDirection";
-      items: {
-        image: { src: string; alt: string };
-        title: string;
-        description: string;
-      }[];
-    };
-
-export type Section = {
-  id: string;
-  number: string;
-  title: string;
-  blocks: Block[];
-};
+import type { Section } from "./guidelines.types";
 
 export const sections: Section[] = [
   {
@@ -100,6 +8,8 @@ export const sections: Section[] = [
     blocks: [
       {
         type: "lead",
+        span: "6",
+        align: "right",
         text: [
           "In the world of finance, mistakes happen—miscalculations, overlooked expenses, inefficiencies that silently erode profitability. Businesses lose money not because they aren’t earning, but because errors go unchecked.",
           "Redo restores confidence in financial numbers.",
@@ -107,12 +17,21 @@ export const sections: Section[] = [
       },
       {
         type: "image",
-        src: "/img/brand-strategy.png",
-        alt: "Person holding a tablet",
-        heightClass: "h-[345.91px] md:h-[363.46px] lg:h-[482.2px]",
+        image: {
+          src: "/img/brand-strategy.png",
+          alt: "Person holding a tablet",
+          layout: "normal",
+          align: "right",
+          size: {
+            kind: "class",
+            value: "h-[345.91px] md:h-[363.46px] lg:h-[482.2px]",
+          },
+        },
       },
       {
         type: "lead",
+        span: "6",
+        align: "right",
         text: [
           "Born from the need for financial clarity, Redo was founded on a simple yet powerful mission: to correct financial errors and optimize balance sheets. We believe that precision is the key to profitability, and that businesses shouldn’t be held back by avoidable losses. With advanced technology and expert analysis, we uncover discrepancies, eliminate inefficiencies, and restore confidence in the numbers that drive success.",
           "At Redo, we don’t just fix mistakes—we empower businesses to move forward with accuracy and efficiency. Because when the numbers are right, the future looks even brighter.",
@@ -131,7 +50,14 @@ export const sections: Section[] = [
           "Redo’s voice brings our brand to life through the words we write and speak. The way we communicate with customers has the power to transform their financial well-being. Through clear and intentional language, we make financial corrections simple, accessible, and stress-free. Our direct, approachable, and transparent voice ensures that fixing mistakes feels effortless—so our customers can move forward with confidence.",
         ],
       },
-      { type: "image", src: "/img/personality-words.png", alt: "Word cloud" },
+      {
+        type: "image",
+        image: {
+          src: "/img/personality-words.png",
+          alt: "Word cloud",
+          layout: "full",
+        },
+      },
       {
         type: "toneVoice",
         title: "Tone & Voice",
@@ -153,8 +79,16 @@ export const sections: Section[] = [
         ],
       },
       {
-        type: "sampleCopy",
-        title: "Sample Copy",
+        type: "divider",
+      },
+      {
+        type: "heading",
+        text: "Sample Copy",
+        variant: "h2",
+      },
+      {
+        type: "cardsGrid",
+        columns: { base: 1, md: 4, lg: 4 },
         items: [
           {
             title: "See an Error? We’ll Make It Right.",
@@ -201,7 +135,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-primary.png",
               alt: "Redo primary lockup",
-              height: 320,
+              size: {
+                kind: "px",
+                value: 320,
+              },
             },
           },
           {
@@ -209,7 +146,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-clearspace.png",
               alt: "Redo clearspace diagram",
-              height: 260,
+              size: {
+                kind: "px",
+                value: 260,
+              },
             },
           },
           {
@@ -217,7 +157,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-secondary.png",
               alt: "Redo secondary lockup",
-              height: 240,
+              size: {
+                kind: "px",
+                value: 240,
+              },
             },
           },
         ],
@@ -232,7 +175,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-dont-resize.png",
               alt: "Incorrect resize example",
-              height: 220,
+              size: {
+                kind: "px",
+                value: 220,
+              },
             },
           },
           {
@@ -240,7 +186,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-dont-rotate.png",
               alt: "Incorrect rotation example",
-              height: 220,
+              size: {
+                kind: "px",
+                value: 220,
+              },
             },
           },
           {
@@ -248,7 +197,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-dont-color.png",
               alt: "Incorrect color example",
-              height: 220,
+              size: {
+                kind: "px",
+                value: 220,
+              },
             },
           },
           {
@@ -256,7 +208,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-dont-outline.png",
               alt: "Incorrect outline example",
-              height: 220,
+              size: {
+                kind: "px",
+                value: 220,
+              },
             },
           },
           {
@@ -264,7 +219,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-dont-reverse.png",
               alt: "Incorrect reverse example",
-              height: 220,
+              size: {
+                kind: "px",
+                value: 220,
+              },
             },
           },
           {
@@ -272,7 +230,10 @@ export const sections: Section[] = [
             image: {
               src: "/img/logo-dont-gradient.png",
               alt: "Incorrect gradient example",
-              height: 220,
+              size: {
+                kind: "px",
+                value: 220,
+              },
             },
           },
         ],
@@ -303,7 +264,7 @@ export const sections: Section[] = [
       },
 
       {
-        type: "paletteSection",
+        type: "palette",
         title: "Primary Palette",
         swatches: [
           { name: "Orange", hex: "#FA9819" },
@@ -314,7 +275,7 @@ export const sections: Section[] = [
       },
 
       {
-        type: "paletteSection",
+        type: "palette",
         title: "Secondary Palette",
         swatches: [
           { name: "Navy", hex: "#1E3D59" },
@@ -329,7 +290,7 @@ export const sections: Section[] = [
       },
 
       {
-        type: "gradientSection",
+        type: "gradients",
         title: "Gradient Palette",
         gradients: [
           {
@@ -367,7 +328,14 @@ export const sections: Section[] = [
 
       {
         type: "typePairing",
-        preview: { src: "/img/type-aa.png", alt: "Aa specimen", height: 260 },
+        preview: {
+          src: "/img/type-aa.png",
+          alt: "Aa specimen",
+          size: {
+            kind: "px",
+            value: 260,
+          },
+        },
         paragraphs: [
           {
             text: "Primary Sans–Serif (Rethink Sans Reg) is a clean, modern sans-serif typeface that ensures legibility and precision across all digital and print materials. Its geometric structure reflects clarity, efficiency, and trust, making it the ideal choice for data-heavy content, dashboards, and user interfaces.",

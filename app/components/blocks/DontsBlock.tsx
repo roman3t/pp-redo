@@ -1,5 +1,5 @@
 import Heading02 from "../heading-02";
-import type { Block } from "../../content/guidelines.data";
+import type { Block } from "../../content/guidelines.types";
 import ImageCard from "./ImageCard";
 
 export default function DontsBlock({
@@ -14,11 +14,7 @@ export default function DontsBlock({
       <div className="space-y-8">
         {block.items.map((it, idx) => (
           <div key={idx} className="space-y-3">
-            <ImageCard
-              src={it.image.src}
-              alt={it.image.alt}
-              height={it.image.height}
-            />
+            <ImageCard image={it.image} />
 
             <div className="flex items-center gap-2 text-sm font-medium text-black">
               <span className="inline-flex h-4 w-4 items-center justify-center rounded-full bg-red-600 text-[10px] text-white">

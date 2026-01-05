@@ -1,5 +1,6 @@
-import { Block } from "@/app/content/guidelines.data";
+import type { Block } from "@/app/content/guidelines.types";
 import ImageCard from "./ImageCard";
+import { cn } from "@/app/lib/cn";
 
 export default function ImageBlock({
   block,
@@ -7,11 +8,8 @@ export default function ImageBlock({
   block: Extract<Block, { type: "image" }>;
 }) {
   return (
-    // <ImageCard src={block.src} alt={block.alt} height={block.height} />
-    <ImageCard
-      src={block.src}
-      alt={block.alt}
-      heightClass={block.heightClass}
-    />
+    <div className={cn(block.image.layout === "full" ? "col-span-12" : "col-span-12")}>
+      <ImageCard image={block.image} />
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Block } from "@/app/content/guidelines.data";
+import type { Block } from "@/app/content/guidelines.types";
 import Paragraph01 from "../paragraph-01";
 
 export default function LeadBlock({

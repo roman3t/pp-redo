@@ -1,4 +1,4 @@
-import type { Block } from "../../content/guidelines.data";
+import type { Block } from "../../content/guidelines.types";
 import Heading02 from "../heading-02";
 import ImageCard from "./ImageCard";
 
@@ -12,11 +12,8 @@ export default function GalleryBlock({
       {block.items.map((it, idx) => (
         <section key={idx} className="space-y-4">
           <Heading02>{it.title}</Heading02>
-          <ImageCard
-            src={it.image.src}
-            alt={it.image.alt}
-            height={it.image.height}
-          />
+          
+          <ImageCard image={it.image} />
         </section>
       ))}
     </div>

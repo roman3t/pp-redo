@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-import type { Block } from "../../content/guidelines.data";
+import type { Block } from "../../content/guidelines.types";
 
 import LeadBlock from "../blocks/LeadBlock";
 import SubheadingBlock from "../blocks/SubheadingBlock";
@@ -17,6 +17,9 @@ import TypePairingBlock from "../blocks/TypePairingBlock";
 import TypeSpecimenBlock from "../blocks/TypeSpecimenBlock";
 import SizingBlock from "../blocks/SizingBlock";
 import ArtDirectionBlock from "../blocks/ArtDirection.Block";
+
+import HeadingBlock from "../blocks/HeadingBlock";
+import CardsGridBlock from "../blocks/CardsGridBock";
 
 type Renderer<T> = (block: T) => ReactNode;
 
@@ -48,6 +51,10 @@ const renderers: Partial<Record<Block["type"], Renderer<any>>> = {
   ),
 
   artDirection: (b) => <ArtDirectionBlock items={b.items} />,
+
+  heading: (b) => <HeadingBlock block={b} />,
+
+  cardsGrid: (b) => <CardsGridBlock block={b} />,
 };
 
 export function renderBlock(block: Block) {
