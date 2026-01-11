@@ -1,6 +1,7 @@
 import Heading02 from "../heading-02";
 import type { Block } from "../../content/guidelines.types";
 import ImageCard from "./ImageCard";
+import { Text } from "../ui/Text";
 
 export default function DontsBlock({
   block,
@@ -8,10 +9,10 @@ export default function DontsBlock({
   block: Extract<Block, { type: "donts" }>;
 }) {
   return (
-    <section className="space-y-6">
-      <Heading02>{block.title}</Heading02>
+    <section className="space-y-2.5 mt-10">
+      <Text variant={"h2"}>{block.title}</Text>
 
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className=" grid grid-cols-1 gap-7.5 md:grid-cols-3 ">
         {block.items.map((it, idx) => (
           <div key={idx} className="min-w-0 space-y-3">
             <ImageCard image={it.image} />
