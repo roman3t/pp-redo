@@ -56,6 +56,10 @@ export const sections: Section[] = [
           src: "/img/personality-words.png",
           alt: "Word cloud",
           layout: "full",
+          size: {
+            kind: "class",
+            value: "h-[243.44px] md:h-[500px]",
+          },
         },
       },
       {
@@ -91,22 +95,20 @@ export const sections: Section[] = [
         columns: { base: 1, md: 4, lg: 4 },
         items: [
           {
-            title: "Your Finances, Fixed the Right Way",
-            body: "Precision matters when it comes to financial corrections. A small error can have a big impact on your savings, credit score, or future financial goals.",
+            title: "See an Error? We’ll Make It Right.",
+            body: "Not sure what that unexpected charge is? Worried about an incorrect withdrawal? Instead of worrying or assuming the worst, let us investigate and resolve the issue for you. ",
+          },
+          {
+            title: "Mistakes Don’t Have to Cost You—We’ve Got Your Back",
+            body: "An overlooked charge or a simple accounting mistake shouldn’t throw off your financial plans. We step in to identify and correct these issues before they become bigger problems. ",
           },
           {
             title: "We Handle the Fix, You Focus on What Matters",
             body: "Your time is valuable, and dealing with financial errors shouldn’t take up more of it than necessary. Whether it’s an unexpected overdraft fee or a billing mistake, we take care of the correction process for you.",
           },
-
           {
-            title: "Mistakes Don’t Have to Cost You—We’ve Got Your Back",
-            body: "An overlooked charge or a simple accounting mistake shouldn’t throw off your financial plans. We step in to identify and correct these issues before they become bigger problems. ",
-          },
-
-          {
-            title: "See an Error? We’ll Make It Right.",
-            body: "Not sure what that unexpected charge is? Worried about an incorrect withdrawal? Instead of worrying or assuming the worst, let us investigate and resolve the issue for you. ",
+            title: "Your Finances, Fixed the Right Way",
+            body: "Precision matters when it comes to financial corrections. A small error can have a big impact on your savings, credit score, or future financial goals.",
           },
         ],
       },

@@ -1,5 +1,6 @@
 import type { Block } from "../../content/guidelines.types";
 import { cn } from "@/app/lib/cn";
+import { Text } from "../ui/Text";
 
 const COLS = {
   1: "grid-cols-1",
@@ -36,9 +37,13 @@ export default function CardsGridBlock({
   return (
     <div className={cn("grid gap-8", COLS[base], MD_COLS[md], LG_COLS[lg])}>
       {items.map((item, idx) => (
-        <div key={idx} className="space-y-2">
-          <h4 className="text-sm font-semibold text-black">{item.title}</h4>
-          <p className="text-sm leading-relaxed text-black/70">{item.body}</p>
+        <div key={idx} className="space-y-5">
+          <Text variant={"paragraphBold"} className="text-black">
+            {item.title}
+          </Text>
+          <Text variant={"paragraph"} className="text-[#575757]">
+            {item.body}
+          </Text>
         </div>
       ))}
     </div>

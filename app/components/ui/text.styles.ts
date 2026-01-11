@@ -36,12 +36,12 @@ export const textStyles = cva("", {
       `,
 
       paragraph: `
+        text-base
         font-medium
-        text-[16px]
-        leading-[120%]
-        tracking-[0em]
-        desktop:text-[18px]
-        desktop:tracking-[-0.01em]
+        leading-[1.2]
+        tracking-normal
+        lg:text-[18px]
+        lg:tracking-[-0.01em]
       `,
 
       paragraphBold: `
