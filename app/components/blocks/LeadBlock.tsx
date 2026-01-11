@@ -1,5 +1,4 @@
 import type { Block } from "@/app/content/guidelines.types";
-import Paragraph01 from "../paragraph-01";
 import { Text } from "../ui/Text";
 
 export default function LeadBlock({
