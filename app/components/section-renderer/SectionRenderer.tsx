@@ -51,14 +51,11 @@ export default function SectionRenderer({ section }: { section: Section }) {
 
   return (
     <section
-      className={cn(
-        "mt-8 border-b border-black/10 px-5",
-        "pb-20 md:pt-8 md:pb-30"
-      )}
+      className={cn("mt-8 border-b border-black/10", "pb-20 md:pt-8 md:pb-30")}
     >
       <div className="grid grid-cols-12 gap-x-8 gap-y-8 min-w-0">
         {blocks.map((block, idx) => (
-          <div key={idx} className={cn(getBlockGridClasses(block))}>
+          <div key={idx} className={cn(getBlockGridClasses(block), "px-5")}>
             {block.type === "sectionHeader" ? (
               <Heading01>
                 <span className="text-[#F45F00]">{block.number}</span>{" "}

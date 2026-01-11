@@ -8,21 +8,15 @@ export default function GuidelinesIntro({ sections }: { sections: Section[] }) {
       <div className="overflow-hidden">
         <div
           className=" md:mt-0 relative flex h-65.5 items-center justify-center md:h-135"
-          style={{
-            background:
-              "radial-gradient(120% 120% at 18% 20%, #BFD0DA 0%, rgba(191,208,218,0.45) 25%, rgba(191,208,218,0) 48%), radial-gradient(120% 120% at 45% 40%, #F8C46C 0%, rgba(248,196,108,0.75) 35%, rgba(248,196,108,0) 62%), radial-gradient(120% 120% at 85% 60%, #F45F00 0%, rgba(244,95,0,0.85) 45%, rgba(244,95,0,0) 70%)",
-          }}
         >
-          <Text as="div" className="text-white" variant="h1">
-            Redo
-          </Text>
+          <img src={"img/hero.png"} className="mt-8 md:mt-0 " />
         </div>
 
         <div className="px-5 md:px-8 ">
           <div
             className="
 
-                  md:grid md:grid-cols-1
+                  md:grid 
                   md:grid-cols-[316px_1fr]
                   md:gap-8
                   lg:grid-cols-[419px_1fr]
@@ -36,7 +30,7 @@ export default function GuidelinesIntro({ sections }: { sections: Section[] }) {
                   border-black/10
             "
           >
-            <div className="mb-8 md:w-79 lg:w-[419px] bg-red-300">
+            <div className="mb-8 md:w-79 lg:w-[419px]">
               <Text variant={"h1"}>
                 Brand
                 <br className="hidden md:block" /> Guidelines
@@ -46,8 +40,6 @@ export default function GuidelinesIntro({ sections }: { sections: Section[] }) {
             <div
               className="text-[#575757] 
                         md:space-y-6
-                        md:bg-yellow-400
-                        lg:bg-blue-600
                       "
             >
               <Text variant={"paragraph"} preserveNewlines>

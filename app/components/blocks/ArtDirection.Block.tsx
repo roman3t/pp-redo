@@ -11,14 +11,14 @@ export default function ArtDirectionBlock({
 }) {
   return (
     <section>
-      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-8 md:gap-y-12">
+      <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-x-8 md:gap-y-12 ">
         {items.map((it, idx) => (
           <article key={idx} className="space-y-4">
             <div className="overflow-hidden bg-black/5">
               <img
                 src={it.image.src}
                 alt={it.image.alt}
-                className="h-[220px] w-full object-cover md:h-[260px] lg:h-[280px]"
+                className="h-55 w-full object-cover md:h-[260px] lg:h-[280px]"
               />
             </div>
 

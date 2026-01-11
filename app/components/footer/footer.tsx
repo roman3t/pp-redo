@@ -15,20 +15,20 @@ const legalLinks: FooterLink[] = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-black/10 bg-white lg:ml-62.5">
-      <div className="mx-auto w-full max-w-[1120px] px-5 py-10 md:py-12">
-        <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
+    <footer className="border-t border-black/10 h-118.75 md:h-107.75 lg:h-87 flex flex-col-reverse lg:ml-62.5">
+      <div className="mx-auto w-full pb-8">
+        <div className="flex flex-col gap-14.75 lg:flex-row lg:items-baseline px-4 md:px-10">
           <div className="shrink-0">
             <img
-              src="/img/logo-primary.png"
+              src="/img/logofooter.png"
               alt="Redo"
-              className="h-[58px] w-auto md:h-[44px] lg:h-[52px]"
+              className="h-16 w-67.5  md:h-20.25 md:w-87.5"
             />
           </div>
 
           {/* Links */}
           <nav aria-label="Footer">
-            <ul className="flex flex-col gap-6 text-[14px] font-medium text-black md:flex-row md:items-center md:gap-10">
+            <ul className="flex flex-col gap-4.75 text-[14px] font-medium text-black md:flex-row md:items-center md:gap-10">
               {primaryLinks.map((l) => (
                 <li key={l.label}>
                   <Link href={l.href} className="hover:opacity-70">
@@ -40,13 +40,13 @@ export default function Footer() {
           </nav>
         </div>
 
-        <div className="mt-10 border-t border-black/10" />
+        <div className="mt-10 lg:mt-7.5 border-t border-black/10 " />
 
-        <div className="mt-6 flex items-center justify-between gap-6 text-[12px] font-medium text-black">
+        <div className="flex items-center justify-between gap-4 h-19 text-[12px] font-medium text-black px-4 md:px-10">
           <div className="flex items-center gap-6">
             <span>© Redo</span>
 
-            <ul className="flex items-center gap-6">
+            <ul className="flex items-center gap-4.75">
               {legalLinks.map((l) => (
                 <li key={l.label}>
                   <Link href={l.href} className="hover:opacity-70">

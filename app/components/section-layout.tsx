@@ -14,7 +14,6 @@ export default function SectionLayout({
         md:grid-cols-12 md:gap-12
       "
     >
-
       <div className="md:col-span-5 xl:col-span-4">
         <div className="sticky top-24">{left}</div>
       </div>
