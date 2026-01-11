@@ -1,7 +1,7 @@
 import * as React from "react";
-import Paragraph01 from "../paragraph-01";
 import type { ImageAsset } from "../../content/guidelines.types";
 import { cn } from "@/app/lib/cn";
+import { Text } from "../ui/Text";
 
 type Highlight = { match: string; className: string };
 
@@ -70,9 +70,9 @@ export default function TypePairingBlock({
 
           <div className="space-y-5">
             {paragraphs.map((p, i) => (
-              <Paragraph01 key={i}>
+              <Text variant={"paragraph"} key={i}>
                 {applyHighlights(p.text, p.highlights) as any}
-              </Paragraph01>
+              </Text>
             ))}
           </div>
         </div>

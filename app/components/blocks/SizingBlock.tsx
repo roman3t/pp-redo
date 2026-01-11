@@ -1,8 +1,10 @@
-import Heading02 from "../heading-02";
-import Paragraph01 from "../paragraph-01";
+import { Text } from "../ui/Text";
 
 function splitMeta(meta: string) {
-  const parts = meta.split(/\s{2,}/).map((s) => s.trim()).filter(Boolean);
+  const parts = meta
+    .split(/\s{2,}/)
+    .map((s) => s.trim())
+    .filter(Boolean);
 
   const [a = meta, b = "", c = ""] = parts;
 
@@ -34,14 +36,16 @@ export default function SizingBlock({
     <section className="space-y-10">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-4">
-          <Heading02>{title}</Heading02>
+          <Text variant={"h2"}>{title}</Text>
         </div>
 
         <div className="md:col-span-8">
           {intro?.length ? (
             <div className="space-y-5">
               {intro.map((p, i) => (
-                <Paragraph01 key={i}>{p}</Paragraph01>
+                <Text variant={"paragraph"} key={i}>
+                  {p}
+                </Text>
               ))}
             </div>
           ) : null}

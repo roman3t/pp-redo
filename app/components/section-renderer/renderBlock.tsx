@@ -6,7 +6,6 @@ import LeadBlock from "../blocks/LeadBlock";
 import SubheadingBlock from "../blocks/SubheadingBlock";
 import ImageBlock from "../blocks/ImageBlock";
 import ToneVoiceBlock from "../blocks/ToneVoiceBlock";
-import SampleCopyBlock from "../blocks/SampleCopyBlock";
 import GalleryBlock from "../blocks/GalleryBlock";
 import DontsBlock from "../blocks/DontsBlock";
 import PartnershipsBlock from "../blocks/PartnershipsBlock";
@@ -29,7 +28,6 @@ const renderers: Partial<Record<Block["type"], Renderer<any>>> = {
   image: (b) => <ImageBlock block={b} />,
 
   toneVoice: (b) => <ToneVoiceBlock block={b} />,
-  sampleCopy: (b) => <SampleCopyBlock block={b} />,
   gallery: (b) => <GalleryBlock block={b} />,
   donts: (b) => <DontsBlock block={b} />,
   partnerships: (b) => <PartnershipsBlock block={b} />,

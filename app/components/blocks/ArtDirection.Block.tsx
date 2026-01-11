@@ -1,4 +1,4 @@
-import Paragraph01 from "../paragraph-01";
+import { Text } from "../ui/Text";
 
 export default function ArtDirectionBlock({
   items,
@@ -18,13 +18,14 @@ export default function ArtDirectionBlock({
               <img
                 src={it.image.src}
                 alt={it.image.alt}
-                className="h-55 w-full object-cover md:h-[260px] lg:h-[280px]"
+                className="h-55 w-full object-cover md:h-65 lg:h-70"
               />
             </div>
 
             <div className="space-y-1">
               <div className="text-sm font-semibold text-black">{it.title}</div>
-              <Paragraph01>{it.description}</Paragraph01>
+
+              <Text variant={"paragraph"}>{it.description}</Text>
             </div>
           </article>
         ))}
