@@ -7,7 +7,7 @@ export default function GuidelinesIntro({ sections }: { sections: Section[] }) {
     <section>
       <div className="overflow-hidden">
         <div className=" md:mt-0 relative flex h-65.5 items-center justify-center md:h-135">
-          <img src={"img/hero.png"} className="mt-8 md:mt-0 " />
+          <img src={"img/hero-bg.png"} className="mt-8 md:mt-0 " />
         </div>
 
         <div className="px-5 md:px-8 ">
