@@ -7,6 +7,7 @@ type SectionHeaderBlock = {
   type: "sectionHeader";
   number: string;
   title: string;
+  id: string;
 };
 
 type RenderableBlock = Block | SectionHeaderBlock;
@@ -14,7 +15,7 @@ type RenderableBlock = Block | SectionHeaderBlock;
 function getBlockGridClasses(block: RenderableBlock) {
   switch (block.type) {
     case "sectionHeader":
-      return "col-span-12 md:col-span-6";
+      return "col-span-9 md:col-span-6";
 
     case "lead": {
       const span = block.span ?? "6";
@@ -45,7 +46,12 @@ function getBlockGridClasses(block: RenderableBlock) {
 
 export default function SectionRenderer({ section }: { section: Section }) {
   const blocks: RenderableBlock[] = [
-    { type: "sectionHeader", number: section.number, title: section.title },
+    {
+      type: "sectionHeader",
+      number: section.number,
+      title: section.title,
+      id: section.id,
+    },
     ...section.blocks,
   ];
 
@@ -55,9 +61,9 @@ export default function SectionRenderer({ section }: { section: Section }) {
     >
       <div className="grid grid-cols-12 gap-x-8 gap-y-8 min-w-0">
         {blocks.map((block, idx) => (
-          <div key={idx} className={cn(getBlockGridClasses(block), "px-5")}>
+          <div key={idx} className={cn(getBlockGridClasses(block), "px-5 ")}>
             {block.type === "sectionHeader" ? (
-              <Text variant={"h1"}>
+              <Text variant={"h1"} id={block.id}>
                 <span className="text-[#F45F00]">{block.number}</span>{" "}
                 <span>{block.title}</span>
               </Text>

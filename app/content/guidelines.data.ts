@@ -368,8 +368,8 @@ export const sections: Section[] = [
           layout: "normal",
           align: "right",
           size: {
-            kind: "px",
-            value: 260,
+            kind: "class",
+            value: "h-[300px]",
           },
         },
         paragraphs: [
@@ -417,28 +417,28 @@ export const sections: Section[] = [
           {
             text: "Financial errors shouldn’t slow you down or cause unnecessary stress. Whether it’s an incorrect charge, a duplicate transaction, or a miscalculated fee, we step in to make things right. Our process is simple, straightforward, and designed to get your money back where it belongs—quickly and without hassle.",
             meta: "Type Sizes 0–24pt/px    130% Leading    0% Tracking",
-            sizeClass: "text-[14px]",
+            sizeClass: "text-[14px] w-[300px] md:w-[517px]",
             leadingClass: "leading-[1.3]",
             trackingClass: "tracking-[0em]",
           },
           {
             text: "Our team works diligently to recover lost funds, correct inaccuracies, and keep your financial records accurate—so you can feel confident about every dollar in your account.",
             meta: "Type Sizes 24–55pt/px    120% Leading    -1% Tracking",
-            sizeClass: "text-[22px]",
+            sizeClass: "text-[20px] w-[260px] md:w-[517px]",
             leadingClass: "leading-[1.2]",
             trackingClass: "tracking-[-0.01em]",
           },
           {
             text: "Whether it’s a bank error, an unauthorized charge, or an overlooked refund, we ensure you don’t pay for something you shouldn’t have.",
             meta: "Type Sizes 55–72pt/px    110% Leading    -2% Tracking",
-            sizeClass: "text-[40px]",
+            sizeClass: "text-[32px] w-[300px] md:w-[505px] lg:w-[654px]",
             leadingClass: "leading-[1.1]",
             trackingClass: "tracking-[-0.02em]",
           },
           {
-            text: "Clear Up\nConfusion,\nGain Peace\nof Mind",
+            text: "Clear Up Confusion,\nGain Peace of Mind",
             meta: "Type Sizes > 72pt/px    100% Leading    -2% Tracking",
-            sizeClass: "text-[56px]",
+            sizeClass: "text-[50px] w-[260px] md:w-[546px]",
             leadingClass: "leading-[1.0]",
             trackingClass: "tracking-[-0.02em]",
           },
@@ -464,8 +464,12 @@ export const sections: Section[] = [
         items: [
           {
             image: {
-              src: "/img/art-clean-casual.jpg",
+              src: "/img/art-clean-casual.png",
               alt: "Person working casually on laptop at home",
+              size: {
+                kind: "class",
+                value: "h-[212px] md:h-[222px] lg:h-[295px]",
+              },
             },
             title: "Clean & Casual",
             description:
@@ -473,8 +477,12 @@ export const sections: Section[] = [
           },
           {
             image: {
-              src: "/img/art-technology.jpg",
+              src: "/img/art-technology.png",
               alt: "Person using tablet with financial dashboards",
+              size: {
+                kind: "class",
+                value: "h-[212px] md:h-[222px] lg:h-[295px]",
+              },
             },
             title: "Subtle Technology Integration",
             description:
@@ -482,8 +490,12 @@ export const sections: Section[] = [
           },
           {
             image: {
-              src: "/img/art-storytelling.jpg",
+              src: "/img/art-storytelling.png",
               alt: "Person reviewing financial information on laptop",
+              size: {
+                kind: "class",
+                value: "h-[212px] md:h-[222px] lg:h-[295px]",
+              },
             },
             title: "Financial Storytelling",
             description:
@@ -491,8 +503,12 @@ export const sections: Section[] = [
           },
           {
             image: {
-              src: "/img/art-confidence.jpg",
+              src: "/img/art-confidence.png",
               alt: "Person confidently working at desk with city view",
+              size: {
+                kind: "class",
+                value: "h-[212px] md:h-[222px] lg:h-[295px]",
+              },
             },
             title: "People with Confidence & Focus",
             description:

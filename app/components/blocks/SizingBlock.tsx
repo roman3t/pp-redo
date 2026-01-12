@@ -30,20 +30,20 @@ export default function SizingBlock({
     trackingClass: string;
   }[];
 }) {
-  const ordered = [...specimens].reverse();
+  const ordered = [...specimens];
 
   return (
-    <section className="space-y-10">
+    <section className="space-y-10 mb-10">
       <div className="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-10">
         <div className="md:col-span-4">
-          <Text variant={"h2"}>{title}</Text>
+          <Text variant={"h3"}>{title}</Text>
         </div>
 
         <div className="md:col-span-8">
           {intro?.length ? (
             <div className="space-y-5">
               {intro.map((p, i) => (
-                <Text variant={"paragraph"} key={i}>
+                <Text variant={"paragraph"} className="text-[#575757]" key={i}>
                   {p}
                 </Text>
               ))}
@@ -52,7 +52,7 @@ export default function SizingBlock({
         </div>
       </div>
 
-      <div className="space-y-12">
+      <div className="flex flex-col space-y-12 md:flex-col-reverse md:space-y-reverse">
         {ordered.map((s, i) => {
           const m = splitMeta(s.meta);
 
@@ -69,14 +69,12 @@ export default function SizingBlock({
                 {s.text}
               </div>
 
-              <div className="space-y-3">
-                <div className="grid grid-cols-3 text-[12px] text-black/50">
-                  <div className="text-left">{m.left}</div>
-                  <div className="text-center">{m.middle}</div>
-                  <div className="text-right">{m.right}</div>
-                </div>
-                <div className="h-px w-full bg-black/10" />
+              <div className="flex flex-row justify-between">
+                <Text variant={"caption2"}>{m.left}</Text>
+                <Text variant={"caption2"}>{m.middle}</Text>
+                <Text variant={"caption2"}>{m.right}</Text>
               </div>
+              <div className="h-px w-full bg-black/10" />
             </div>
           );
         })}

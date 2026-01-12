@@ -18,14 +18,16 @@ export default function ArtDirectionBlock({
               <img
                 src={it.image.src}
                 alt={it.image.alt}
-                className="h-55 w-full object-cover md:h-65 lg:h-70"
+                className="w-full object-cover h-53 md:h-55.5 lg:h-73.5"
               />
             </div>
 
             <div className="space-y-1">
-              <div className="text-sm font-semibold text-black">{it.title}</div>
+              <Text variant={"caption2"}>{it.title}</Text>
 
-              <Text variant={"paragraph"}>{it.description}</Text>
+              <Text variant={"caption2"} className="text-[#575757]">
+                {it.description}
+              </Text>
             </div>
           </article>
         ))}

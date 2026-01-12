@@ -24,30 +24,23 @@ type Renderer<T> = (block: T) => ReactNode;
 const renderers: Partial<Record<Block["type"], Renderer<any>>> = {
   lead: (b) => <LeadBlock block={b} />,
   image: (b) => <ImageBlock block={b} />,
-
   toneVoice: (b) => <ToneVoiceBlock block={b} />,
   gallery: (b) => <GalleryBlock block={b} />,
   donts: (b) => <DontsBlock block={b} />,
   partnerships: (b) => <PartnershipsBlock block={b} />,
-
   palette: (b) => <PaletteSectionBlock title={b.title} swatches={b.swatches} />,
   gradients: (b) => (
     <GradientSectionBlock title={b.title} gradients={b.gradients} />
   ),
-
   typePairing: (b) => (
     <TypePairingBlock preview={b.preview} paragraphs={b.paragraphs} />
   ),
   typeSpecimen: (b) => <TypeSpecimenBlock items={b.items} />,
-
   sizing: (b) => (
     <SizingBlock title={b.title} intro={b.intro} specimens={b.specimens} />
   ),
-
   artDirection: (b) => <ArtDirectionBlock items={b.items} />,
-
   heading: (b) => <HeadingBlock block={b} />,
-
   cardsGrid: (b) => <CardsGridBlock block={b} />,
 };
 
